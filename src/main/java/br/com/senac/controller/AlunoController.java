@@ -49,5 +49,11 @@ public class AlunoController {
 		mv.addObject("aluno", alunoService.buscarPorId(id));
 		return mv;
 	}
+	
+	//formar alternativa de salvar
+	public ModelAndView alterar(Aluno alunoAlterado) {
+		alunoService.salvarAlteracao(alunoAlterado);
+		return listaTodosAlunos
+	}
 
 }

@@ -31,6 +31,12 @@ public class AlunoService {
 		repo.deleteById(id);
 	}
 	
+	public Aluno salvarAlteracao(Aluno alunoAlterado) {
+		Aluno aluno = buscarPorId(alunoAlterado.getId());
+		aluno.setNome(alunoAlterado.getNome());
+		return salvar(aluno);
+	}
+	
 	
 
 	
