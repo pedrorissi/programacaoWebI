@@ -27,8 +27,11 @@ public class AlunoService {
 		return aluno.orElseThrow(() -> new ObjectNotFoundException(1L,"Aluno não encontrado."));
 	}
 	
-	public void removerPorId(Integer id) {
+	public void deletarPorId(Integer id) {
 		repo.deleteById(id);
 	}
+	
+	
 
+	
 }

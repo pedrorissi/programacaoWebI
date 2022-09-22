@@ -39,8 +39,15 @@ public class AlunoController {
 	
 	@GetMapping("/excluir/{idX}")
 	public ModelAndView excluirAluno(@PathVariable("idX") Integer id) {
-		alunoService.removerPorId(id);
+		alunoService.deletarPorId(id);
 		return listarTodosAlunos();
+	}
+	
+	@GetMapping("/paginaAlterar/{id}")
+	public ModelAndView alterarAluno(@PathVariable("id") Integer id) {
+		ModelAndView mv = new ModelAndView("aluno/alterarAluno");
+		mv.addObject("aluno", alunoService.buscarPorId(id));
+		return mv;
 	}
 
 }
